@@ -20,6 +20,10 @@ def cholesterol_interface():
 	print("Cholesterol check")
 	chol_input = input("Enter your cholesterol test result: ")
 	chol_data = chol_input.split("=")
+	if chol_data[0] in ["LDL", "HDL", "TLC"]:	# input validation
+		print("Good input")
+	else:
+		print("Bad input")
 	if chol_data[0] == "HDL":
 		result = check_HDL(int(chol_data[1]))
 		print("The result is {}".format(result))
